@@ -17,7 +17,7 @@ func newDeck() deck {
 	cards := deck{}
 
 	cardSuits := []string{"Spades", "Diamonds", "hearts", "Clubs"}
-	cardValues := []string{"Ace", "two", "three", "four"}
+	cardValues := []string{"Ace", "Two", "Three", "Four"}
 
 	for _, suit := range cardSuits {
 		for _, value := range cardValues {
@@ -49,7 +49,7 @@ func (d deck) saveToFile(filename string) error{
 	return ioutil.WriteFile(filename, []byte(d.toString()), 0666)
 }
 
-func (d deck) newDeckFromFile(filename string) deck {
+func newDeckFromFile(filename string) deck {
 	bs, err := ioutil.ReadFile(filename)
 
 	if err != nil {
